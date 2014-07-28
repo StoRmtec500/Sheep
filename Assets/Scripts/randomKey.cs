@@ -10,7 +10,7 @@ public class randomKey : MonoBehaviour {
 	public bool start = false;
 	public bool erlaubt = false;
 	public bool einmal = false;
-	bool gestartet = false;
+	public bool gestartet = false;
 	public enum startState {On, Off };
 	public startState starts = startState.Off;
 	public GUIText zahlanzeige;
@@ -21,6 +21,7 @@ public class randomKey : MonoBehaviour {
 	public int buttonstring;
 	public GameObject pnlGameOver;
 	public GameObject pnlOverlay;
+	public UILabel lblText;
 	//public static int buttonnumber;
 
 
@@ -45,12 +46,14 @@ public class randomKey : MonoBehaviour {
 				Debug.Log ("--------------WEITER--------------"); 
 				erlaubt = false;
 				einmal = false;
+				//gestartet = true;
 			}
 			if (buttonstring != zahl && erlaubt == true) {
 				erlaubt = false;
 				einmal = false;
 				Time.timeScale = 0f;
 				Debug.Log("------------- Aus ---------------");
+				lblText.text = "Du hast die falsche Zahl gedrückt!";
 			}
 		}
 	}
@@ -76,6 +79,7 @@ public class randomKey : MonoBehaviour {
 				Debug.Log("------------- NICHTS GEDRÜCKT ---------------");
 				pnlGameOver.SetActive(true);
 				pnlOverlay.SetActive(true);
+				lblText.text = "Du hast leider nichts gedrückt!";
 			}
 		}
 	}

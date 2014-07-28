@@ -26,6 +26,7 @@ public class touch : MonoBehaviour {
 		randomKey.Instance.buttonstring = 0;
 		randomKey.Instance.erlaubt = true;
 		randomKey.Instance.einmal = true;
+		randomKey.Instance.gestartet = false;
 		randomKey.Instance.buttonstring += nummertouch;
 		//randomKey.Instance.einmal = false;
 	}
